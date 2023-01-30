@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class ProductCategories extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
-
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class, 'product_categories', 'categories_id', 'products_id');
-    }
+    protected $fillable = [
+        'products_id',
+        'categories_id',
+      ];
 }

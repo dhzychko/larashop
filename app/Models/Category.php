@@ -9,8 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'products_categories', 'products_id', 'categories_id');
+        return $this->belongsToMany(Product::class, 'product_categories', 'products_id', 'categories_id');
     }
 }
