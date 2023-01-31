@@ -18,8 +18,9 @@
 
         <h2>Form Validation</h2>
 
-        <form name="employee" id="employee" method="post" action="{{url('store-form')}}">
+        <form name="employee" id="employee" method="get" action="{{url('form/store')}}">
         {{ csrf_field() }}
+            <div class="disclamer">To validate enter at least 5 characters</div>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" class="@error('name') is-invalid @enderror form-control">
@@ -28,6 +29,8 @@
                 @enderror
             </div> 
 
+            <hr>
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" class="@error('email') is-invalid @enderror form-control">
@@ -35,6 +38,8 @@
                 <div class="alert">{{ $message }}</div>
                 @enderror
             </div> 
+
+            <hr>
 
             <div class="form-group">
                 <label for="age">Age</label>

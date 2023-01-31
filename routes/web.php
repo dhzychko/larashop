@@ -19,6 +19,8 @@ Route::get('/all-products', 'App\Http\Controllers\ProductsController@index');
 
 Route::get('/form', 'App\Http\Controllers\FormController@index');
 
+Route::get('/form/store', 'App\Http\Controllers\FormController@store');
+
 Route::get('/test', function () {
     return view('test');
 });
