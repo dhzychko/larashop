@@ -25,16 +25,5 @@ class FormController extends Controller
 
         dd($validatedData);
  
-        // $emp = new Employee;
- 
-        // $emp->name = $request->name;
-        // $emp->email = $request->email;
-        // $emp->age = $request->age;
-        // $emp->contact_no = $request->contact_no;
- 
-        // $emp->save();
- 
-        // return redirect('form')->with('status', 'Form Data Has Been Inserted');
- 
     }
 }
