@@ -48,10 +48,15 @@ class ProductController extends Controller
 
         $product = Product::create($request->all());
         
-        return [
+        response()->json([
             "status" => "ok",
             "data" => $product
-        ];
+        ], 201);
+
+        // return [
+        //     "status" => "ok",
+        //     "data" => $product
+        // ];
 
     }
 
@@ -63,7 +68,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return response()->json($product);
+        return response()->json([
+            "status" => "ok",
+            "data" => $product
+        ], 200);
     }
 
     /**
