@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-Route::get('/all-products', 'App\Http\Controllers\ProductsController@index');
+Route::resource('/products', ProductController::class);
+
 
 Route::get('/form', 'App\Http\Controllers\FormController@index');
 
