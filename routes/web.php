@@ -22,6 +22,6 @@ Route::get('/form', 'App\Http\Controllers\FormController@index');
 Route::get('/form/store', 'App\Http\Controllers\FormController@store');
 
 Route::get('/test', function () {
-    //test 
+    //test 2
     return view('test');    
 });
