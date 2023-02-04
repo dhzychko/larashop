@@ -18,7 +18,12 @@ class ProductController extends Controller
         $products = Product::all();
         // dump($products);
 
-        return response()->json($products);
+        // return response()->json($products);
+        return response()->json([
+            'success' => true,
+            'message' => 'List products',
+            'data' => $products
+        ], 200);
         
     }
 
@@ -41,23 +46,20 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price_in_cents' => 'required',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price_in_cents' => 'required|integer',
+            'sku' => 'nullable',
+            'image' => 'nullable|string',
         ]);
 
         $product = Product::create($request->all());
         
         response()->json([
-            "status" => "ok",
-            "data" => $product
+            'success' => true,
+            'message' => 'Product created',
+            'data' => $product
         ], 201);
-
-        // return [
-        //     "status" => "ok",
-        //     "data" => $product
-        // ];
-
     }
 
     /**
@@ -69,8 +71,9 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return response()->json([
-            "status" => "ok",
-            "data" => $product
+            'success' => true,
+            'message' => 'Product data',
+            'data' => $product
         ], 200);
     }
 
@@ -94,7 +97,32 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price_in_cents' => 'required|integer',
+            'sku' => 'nullable',
+            'image' => 'nullable|string',
+        ]);
+
+        $product_to_edit = Product::find($product->id);
+
+        if ($product_to_edit) {
+            $product_to_edit->update([
+                'title' => $request->title,
+                'content' => $request->content
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Product updated',
+                'data' => $product_to_edit
+            ], 200);
+        }
+        return response()->json([
+            'success' => false,
+            'message' => 'Product not found'
+        ], 404);
     }
 
     /**
@@ -103,8 +131,20 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        if ($product) {
+            $product->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Product deleted'
+            ], 200);
+        }
+        return response()->json([
+            'success' => false,
+            'message' => 'Product not found'
+        ], 404);
     }
+
 }

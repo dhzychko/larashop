@@ -18,9 +18,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::resource('/products', ProductController::class);
 
-
 Route::get('/form', 'App\Http\Controllers\FormController@index');
-
 Route::get('/form/store', 'App\Http\Controllers\FormController@store');
 
 Route::get('/test', function () {
