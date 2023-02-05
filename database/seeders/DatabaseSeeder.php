@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         Category::factory(5)->create();
         Product::factory(50)->create();
         ProductCategories::factory(10)->create();
+
+        $this->call(NeighbourhoodSeeder::class);
+        $this->call(RealtorSeeder::class);
+        $this->call(PropertySeeder::class);
     }
 }

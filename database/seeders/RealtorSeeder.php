@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Realtor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class RealtorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Realtor::factory()->times(30)->create();
     }
 }

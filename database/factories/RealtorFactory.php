@@ -17,7 +17,8 @@ class RealtorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
         ];
     }
 }

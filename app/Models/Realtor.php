@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Realtor extends Model
 {
     use HasFactory;
+
+    public function properties()
+    {
+        $this->hasMany(Property::class);
+    }
 }
