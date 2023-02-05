@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorePropertyRequest;
-use App\Http\Requests\UpdatePropertyRequest;
-use App\Models\Property;
+use App\Http\Requests\StoreNeighbourhoodRequest;
+use App\Http\Requests\UpdateNeighbourhoodRequest;
+use App\Models\Neighbourhood;
+use App\Http\Controllers\Controller;
 
-class PropertyController extends Controller
+class NeighbourhoodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class PropertyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePropertyRequest  $request
+     * @param  \App\Http\Requests\StoreNeighbourhoodRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePropertyRequest $request)
+    public function store(StoreNeighbourhoodRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class PropertyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show(Neighbourhood $neighbourhood)
     {
         //
     }
@@ -53,10 +54,10 @@ class PropertyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(Neighbourhood $neighbourhood)
     {
         //
     }
@@ -64,11 +65,11 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePropertyRequest  $request
-     * @param  \App\Models\Property  $property
+     * @param  \App\Http\Requests\UpdateNeighbourhoodRequest  $request
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePropertyRequest $request, Property $property)
+    public function update(UpdateNeighbourhoodRequest $request, Neighbourhood $neighbourhood)
     {
         //
     }
@@ -76,10 +77,10 @@ class PropertyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\Neighbourhood  $neighbourhood
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy(Neighbourhood $neighbourhood)
     {
         //
     }

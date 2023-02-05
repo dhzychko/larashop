@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreRealtorRequest;
 use App\Http\Requests\UpdateRealtorRequest;
 use App\Models\Realtor;
+use App\Http\Controllers\Controller;
 
 class RealtorController extends Controller
 {
@@ -15,7 +16,11 @@ class RealtorController extends Controller
      */
     public function index()
     {
-        //
+        
+        return response()->json([
+            'success' => true,
+            'message' => 'List Realtors'
+        ], 200);
     }
 
     /**
