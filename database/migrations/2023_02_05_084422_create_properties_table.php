@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type');
+            $table->string('address');
+            $table->integer('square');
+            $table->unsignedBiginteger('realtor_id')->nullable();
+            $table->unsignedBiginteger('neighborhood_id')->nullable();
             $table->timestamps();
         });
     }
