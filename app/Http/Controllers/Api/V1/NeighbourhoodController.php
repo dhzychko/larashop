@@ -6,6 +6,8 @@ use App\Http\Requests\StoreNeighbourhoodRequest;
 use App\Http\Requests\UpdateNeighbourhoodRequest;
 use App\Models\Neighbourhood;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\PropertyResource;
+use App\Http\Resources\V1\PropertyCollection;
 
 class NeighbourhoodController extends Controller
 {
@@ -16,7 +18,7 @@ class NeighbourhoodController extends Controller
      */
     public function index()
     {
-        //
+        return new NeighbourhoodCollection(Neighbourhood::paginate());
     }
 
     /**
@@ -48,7 +50,7 @@ class NeighbourhoodController extends Controller
      */
     public function show(Neighbourhood $neighbourhood)
     {
-        //
+        return new NeighbourhoodResource($neighbourhood);
     }
 
     /**

@@ -6,6 +6,8 @@ use App\Http\Requests\StoreRealtorRequest;
 use App\Http\Requests\UpdateRealtorRequest;
 use App\Models\Realtor;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\RealtorResource;
+use App\Http\Resources\V1\RealtorCollection;
 
 class RealtorController extends Controller
 {
@@ -17,10 +19,7 @@ class RealtorController extends Controller
     public function index()
     {
         
-        return response()->json([
-            'success' => true,
-            'message' => 'List Realtors'
-        ], 200);
+        return new RealtorCollection(Realtor::paginate());
     }
 
     /**
@@ -52,7 +51,7 @@ class RealtorController extends Controller
      */
     public function show(Realtor $realtor)
     {
-        //
+        return new RealtorResource($realtor);
     }
 
     /**

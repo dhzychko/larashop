@@ -6,6 +6,8 @@ use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
 use App\Models\Property;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\PropertyResource;
+use App\Http\Resources\V1\PropertyCollection;
 
 class PropertyController extends Controller
 {
@@ -16,12 +18,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $property = Property::all();
-        return response()->json([
-            'success' => true,
-            'message' => 'List Properties',
-            'data' => $property
-        ], 200);
+        return new PropertyCollection(Property::paginate());
     }
 
     /**
@@ -53,7 +50,7 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
-        //
+        return new PropertyResource($property);
     }
 
     /**
