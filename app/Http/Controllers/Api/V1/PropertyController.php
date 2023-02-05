@@ -52,7 +52,7 @@ class PropertyController extends Controller
      */
     public function update(UpdatePropertyRequest $request, Property $property)
     {
-        //
+        $property->update($request->all());
     }
 
     /**

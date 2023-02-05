@@ -53,7 +53,7 @@ class RealtorController extends Controller
      */
     public function update(UpdateRealtorRequest $request, Realtor $realtor)
     {
-        //
+        $realtor->update($request->all());
     }
 
     /**

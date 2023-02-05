@@ -29,8 +29,8 @@ class StorePropertyRequest extends FormRequest
             'type' => ['required', Rule::in(['H','h', 'C','c', 'A','a'])],
             'address' => ['required'],
             'square' => ['required'],
-            'realtorId' => [],
-            'neighborhoodId' => [],
+            'realtorId' => ['sometimes'],
+            'neighborhoodId' => ['sometimes'],
         ];
     }
 

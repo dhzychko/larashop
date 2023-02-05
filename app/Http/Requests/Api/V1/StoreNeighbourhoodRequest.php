@@ -25,7 +25,6 @@ class StoreNeighbourhoodRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-
         ];
     }
 }

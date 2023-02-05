@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateRealtorRequest extends FormRequest
 {
-    /**
+        /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,19 @@ class UpdateRealtorRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $method = $this->method();
+
+        if('PUT' == $method) {
+            return [
+                'name' => ['required'],
+                'email' => ['required', 'email'],
+            ];
+        }
+        else {
+            return [
+                'name' => ['sometimes', 'required'],
+                'email' => ['sometimes', 'required', 'email'],
+            ];
+        }
     }
 }

@@ -52,7 +52,7 @@ class NeighbourhoodController extends Controller
      */
     public function update(UpdateNeighbourhoodRequest $request, Neighbourhood $neighbourhood)
     {
-        //
+        $neighbourhood->update($request->all());
     }
 
     /**

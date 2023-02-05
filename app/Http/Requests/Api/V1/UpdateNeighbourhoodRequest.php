@@ -13,7 +13,7 @@ class UpdateNeighbourhoodRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,17 @@ class UpdateNeighbourhoodRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $method = $this->method();
+
+        if('PUT' == $method) {
+            return [
+                'name' => ['required'],
+            ];
+        }
+        else {
+            return [
+                'name' => ['sometimes', 'required'],
+            ];
+        }
     }
 }
