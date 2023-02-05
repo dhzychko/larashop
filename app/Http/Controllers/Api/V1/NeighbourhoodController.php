@@ -6,8 +6,8 @@ use App\Http\Requests\StoreNeighbourhoodRequest;
 use App\Http\Requests\UpdateNeighbourhoodRequest;
 use App\Models\Neighbourhood;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\V1\PropertyResource;
-use App\Http\Resources\V1\PropertyCollection;
+use App\Http\Resources\V1\NeighbourhoodResource;
+use App\Http\Resources\V1\NeighbourhoodCollection;
 
 class NeighbourhoodController extends Controller
 {
