@@ -22,16 +22,6 @@ class NeighbourhoodController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreNeighbourhoodRequest  $request
@@ -51,17 +41,6 @@ class NeighbourhoodController extends Controller
     public function show(Neighbourhood $neighbourhood)
     {
         return new NeighbourhoodResource($neighbourhood);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Neighbourhood  $neighbourhood
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Neighbourhood $neighbourhood)
-    {
-        //
     }
 
     /**

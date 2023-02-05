@@ -22,16 +22,6 @@ class PropertyController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StorePropertyRequest  $request
@@ -51,17 +41,6 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
         return new PropertyResource($property);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Property  $property
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Property $property)
-    {
-        //
     }
 
     /**
