@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreRealtorRequest;
-use App\Http\Requests\UpdateRealtorRequest;
+use App\Http\Requests\Api\V1\StoreRealtorRequest;
+use App\Http\Requests\Api\V1\UpdateRealtorRequest;
 use App\Models\Realtor;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\RealtorResource;
@@ -30,7 +30,7 @@ class RealtorController extends Controller
      */
     public function store(StoreRealtorRequest $request)
     {
-        //
+        return new RealtorResource(Realtor::create($request->all()));
     }
 
     /**

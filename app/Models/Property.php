@@ -9,6 +9,15 @@ class Property extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'type',
+        'address',
+        'square',
+        'realtor_id',
+        'neighborhood_id',
+    ];
+
     public function realtor()
     {
         $this->belongsTo(Realtor::class);

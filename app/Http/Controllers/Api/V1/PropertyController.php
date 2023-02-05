@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorePropertyRequest;
-use App\Http\Requests\UpdatePropertyRequest;
+use App\Http\Requests\Api\V1\StorePropertyRequest;
+use App\Http\Requests\Api\V1\UpdatePropertyRequest;
 use App\Models\Property;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\PropertyResource;
@@ -29,7 +29,7 @@ class PropertyController extends Controller
      */
     public function store(StorePropertyRequest $request)
     {
-        //
+        return new PropertyResource(Property::create($request->all()));
     }
 
     /**

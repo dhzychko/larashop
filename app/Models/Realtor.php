@@ -9,6 +9,11 @@ class Realtor extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email'
+    ];
+
     public function properties()
     {
         $this->hasMany(Property::class);

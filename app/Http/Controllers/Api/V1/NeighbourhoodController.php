@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreNeighbourhoodRequest;
-use App\Http\Requests\UpdateNeighbourhoodRequest;
+use App\Http\Requests\Api\V1\StoreNeighbourhoodRequest;
+use App\Http\Requests\Api\V1\UpdateNeighbourhoodRequest;
 use App\Models\Neighbourhood;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\NeighbourhoodResource;
@@ -29,7 +29,7 @@ class NeighbourhoodController extends Controller
      */
     public function store(StoreNeighbourhoodRequest $request)
     {
-        //
+        return new NeighbourhoodResource(Neighbourhood::create($request->all()));
     }
 
     /**
