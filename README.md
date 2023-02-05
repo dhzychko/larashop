@@ -21,6 +21,7 @@ entities:
             realtor (foreign Realtor id)
             neighborhood (foreign Neighborhood id)
 
+    (spelling <a href="https://sapling.ai/usage/neighborhood-vs-neighbourhood#:~:text=Neighborhood%20is%20predominantly%20used%20in,)%20(%20en%2DGB%20).">“Neighborhood” or “Neighbourhood”</a>“)
     Neighbourhood (district, has many Properties ) 
         fields:
             name
