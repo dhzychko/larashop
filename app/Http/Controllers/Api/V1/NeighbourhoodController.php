@@ -63,6 +63,6 @@ class NeighbourhoodController extends Controller
      */
     public function destroy(Neighbourhood $neighbourhood)
     {
-        //
+        $neighbourhood->delete();
     }
 }

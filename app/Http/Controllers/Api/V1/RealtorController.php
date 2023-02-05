@@ -64,6 +64,6 @@ class RealtorController extends Controller
      */
     public function destroy(Realtor $realtor)
     {
-        //
+        $realtor->delete();
     }
 }
